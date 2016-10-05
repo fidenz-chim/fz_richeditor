@@ -12,7 +12,7 @@ module Rich
         do_not_validate_attachment_file_type :rich_file
         validates_attachment_presence :rich_file
         validate :check_content_type
-        validates_attachment_size :rich_file, :less_than=>15.megabyte, :message => "must be smaller than 15MB"
+        validates_attachment_size :rich_file, :less_than=>300.megabyte, :message => "must be smaller than 300MB"
 
         before_create :clean_file_name
 
