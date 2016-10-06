@@ -41,11 +41,14 @@ module Rich
 
   mattr_accessor :allowed_image_types
   @@allowed_image_types = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg']
-  
+
+  mattr_accessor :allowed_video_types
+  @@allowed_video_types = ['video/avi', 'video/mp4', 'video/x-ms-wmv', 'video/mpeg']
+
   mattr_accessor :allowed_audio_types
   @@allowed_audio_types = ['audio/mpeg3', 'audio/x-mpeg-3', 'audio/mpeg', 'audio/mp3']
 
-  mattr_accessor :allowed_document_types
+  mattr_accessor :allowed_document_types                                                                                                                                                
   @@allowed_document_types = :all
 
   mattr_accessor :file_path
@@ -173,6 +176,8 @@ module Rich
       true if allowed_image_types.include?(mime)
     elsif simplified_type == 'audio'
       true if allowed_audio_types.include?(mime)
+    elsif simplified_type == 'video'
+      true if allowed_video_types.include?(mime)
     elsif simplified_type == 'file'
       if allowed_document_types == :all || allowed_document_types.include?(mime)
         true

@@ -13,6 +13,8 @@ module Rich
                   RichFile.images
                 when 'audio'
                   RichFile.audios
+                when 'video'
+                  RichFile.videos
                 else
                   RichFile.files
                 end
