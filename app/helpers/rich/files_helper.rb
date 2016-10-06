@@ -6,7 +6,7 @@ module Rich
       else
         case file.rich_file_content_type
         when 'application/pdf'
-          asset_path 'icons/icon-pdf.png'
+          asset_path 'rich/icon-pdf.png'
         when 'application/msword'
           asset_path 'icons/icon-doc.png'
         when 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
