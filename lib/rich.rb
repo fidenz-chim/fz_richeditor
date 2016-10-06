@@ -171,14 +171,13 @@ module Rich
   def self.validate_mime_type(mime, simplified_type)
     # does the mimetype match the given simplified type?
     # puts "matching:" + mime + " TO " + simplified_type
-
     case simplified_type
     when 'image'
       return true if allowed_image_types.include?(mime)
     when 'audio'
       return true if mime.include? 'audio'
     when 'video'
-      return true if mime.include? 'video'
+      return true if mime.include?('video') || mime.include?('webm') || mime.include?('mp4')
     when 'file'
       if allowed_document_types == :all || allowed_document_types.include?(mime)
         return true
