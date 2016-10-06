@@ -172,20 +172,21 @@ module Rich
     # does the mimetype match the given simplified type?
     # puts "matching:" + mime + " TO " + simplified_type
 
-    false # assume the worst
-
-    if simplified_type == 'image'
-      true if allowed_image_types.include?(mime)
-    elsif simplified_type == 'audio'
-      true if allowed_audio_types.include?(mime)
-      true if mime.include? 'audio'
-    elsif simplified_type == 'video'
-      true if allowed_video_types.include?(mime)
-      true if mime.include? 'video'
-    elsif simplified_type == 'file'
+    case simplified_type
+    when 'image'
+      return true if allowed_image_types.include?(mime)
+    when 'audio'
+      return true if mime.include? 'audio'
+    when 'video'
+      return true if mime.include? 'video'
+    when 'file'
       if allowed_document_types == :all || allowed_document_types.include?(mime)
-        true
+        return true
+      else
+        return false
       end
+    else
+      return false
     end
   end
 
