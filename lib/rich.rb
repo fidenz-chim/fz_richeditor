@@ -178,10 +178,10 @@ module Rich
       true if allowed_image_types.include?(mime)
     elsif simplified_type == 'audio'
       true if allowed_audio_types.include?(mime)
-      true if if mime.include? 'audio'
+      true if mime.include? 'audio'
     elsif simplified_type == 'video'
       true if allowed_video_types.include?(mime)
-      true if if mime.include? 'video'
+      true if mime.include? 'video'
     elsif simplified_type == 'file'
       if allowed_document_types == :all || allowed_document_types.include?(mime)
         true
