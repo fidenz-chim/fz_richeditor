@@ -43,7 +43,7 @@ module Rich
   @@allowed_image_types = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg']
 
   mattr_accessor :allowed_video_types
-  @@allowed_video_types = ['video/avi', 'video/mp4', 'video/x-ms-wmv', 'video/mpeg']
+  @@allowed_video_types = ['video/avi', 'video/mp4', 'video/x-ms-wmv', 'video/mpeg', 'video/3gpp', 'application/octet-stream', 'video/webm']
 
   mattr_accessor :allowed_audio_types
   @@allowed_audio_types = ['audio/mpeg3', 'audio/x-mpeg-3', 'audio/mpeg', 'audio/mp3']
