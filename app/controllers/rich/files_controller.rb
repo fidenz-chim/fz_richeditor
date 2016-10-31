@@ -15,8 +15,10 @@ module Rich
                   RichFile.audios
                 when 'video'
                   RichFile.videos
-                else
+                when 'file'
                   RichFile.files
+                else
+                  RichFile.all
                 end
 
       if params[:scoped] == 'true'
