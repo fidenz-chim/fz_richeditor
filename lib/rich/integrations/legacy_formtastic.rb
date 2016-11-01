@@ -28,8 +28,7 @@ module Rich
           local_input_options = {
             input_html: {
               class: 'rich-picker',
-              style: editor_options[:style],
-              readonly: true
+              style: editor_options[:style]
             }
           }
 
