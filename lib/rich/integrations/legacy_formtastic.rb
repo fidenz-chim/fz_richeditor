@@ -19,7 +19,6 @@ module Rich
         end
 
         def rich_picker_input(method, options)
-
           scope_type = object_name
           scope_id = object.id
           editor_options = Rich.options(options[:config], scope_type, scope_id)
@@ -27,9 +26,10 @@ module Rich
           dom_id = "#{sanitized_object_name}_#{generate_association_input_name(method)}"
 
           local_input_options = {
-            :input_html => {
-                :class => 'rich-picker',
-                :style => editor_options[:style]
+            input_html: {
+              class: 'rich-picker',
+              style: editor_options[:style],
+              readonly: true
             }
           }
 
@@ -41,9 +41,7 @@ module Rich
             options.inspect
 
           )
-
         end
-
       end
     end
   end
